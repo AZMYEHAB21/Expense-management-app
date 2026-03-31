@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة الخصوصية - Expense Manager</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-info">
+                    <h1>سياسة الخصوصية</h1>
+                    <span class="header-date" id="header-date"></span>
+                </div>
+                <button id="hamburger-btn" class="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="mobile-menu">
+            <!-- User Section -->
+            <div class="mobile-menu-header">
+                <div class="user-avatar" id="mobile-user-avatar">
+                    <span>A</span>
+                </div>
+                <div class="user-info">
+                    <div class="user-name" id="mobile-user-name">المستخدم</div>
+                    <div class="user-email" id="mobile-user-email">test@example.com</div>
+                </div>
+            </div>
+
+            <!-- Main Menu Items -->
+            <div class="mobile-menu-section">
+                <a href="index.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon home-icon">🏠</span>
+                    <span class="menu-text">الرئيسية</span>
+                </a>
+                <a href="add-expense.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon add-icon">➕</span>
+                    <span class="menu-text">إضافة معاملة</span>
+                </a>
+                <a href="transactions.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon list-icon">📋</span>
+                    <span class="menu-text">المعاملات</span>
+                </a>
+                <a href="reports.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon chart-icon">📊</span>
+                    <span class="menu-text">التقارير</span>
+                </a>
+                <a href="settings.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon settings-icon">⚙️</span>
+                    <span class="menu-text">الإعدادات</span>
+                </a>
+            </div>
+
+            <!-- Secondary Menu Items -->
+            <div class="mobile-menu-section secondary">
+                <a href="about.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">ℹ️</span>
+                    <span class="menu-text">حول التطبيق</span>
+                </a>
+                <a href="privacy.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">🔒</span>
+                    <span class="menu-text">سياسة الخصوصية</span>
+                </a>
+                <a href="terms.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">📄</span>
+                    <span class="menu-text">الشروط والأحكام</span>
+                </a>
+            </div>
+
+            <!-- Logout Button -->
+            <div class="mobile-menu-footer">
+                <button id="mobile-logout-btn" class="btn btn-danger btn-full">
+                    <span>تسجيل الخروج</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="page-content">
+            <div class="page-container">
+                <article style="background: var(--surface); padding: 24px; border-radius: 12px; box-shadow: var(--shadow-md); line-height: 1.8;">
+                    
+                    <section style="margin-bottom: 32px;">
+                        <h2 style="color: var(--primary); margin-bottom: 16px; font-size: 24px;">سياسة الخصوصية</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 12px;">
+                            تاريخ التحديث: <strong>2026-04-01</strong>
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">1. مقدمة</h3>
+                        <p>
+                            نحن في Expense Manager نأخذ خصوصيتك على محمل الجد. تشرح هذه السياسة كيف نتعامل مع بيانات معاملاتك المالية.
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">2. البيانات المحفوظة محلياً فقط</h3>
+                        <p>
+                            جميع بيانات معاملاتك المالية تُحفظ <strong>محلياً على جهازك فقط</strong> باستخدام تخزين المتصفح (localStorage). 
+                            نحن <strong>لا نرسل بيانات معاملاتك</strong> إلى أي خادم أو جهة خارجية.
+                        </p>
+                        <ul style="margin-top: 12px; margin-right: 20px;">
+                            <li>معلومات حسابك (الاسم والبريد الإلكتروني)</li>
+                            <li>تفاصيل المعاملات (المبلغ والفئة والتاريخ)</li>
+                            <li>جميع البيانات الشخصية الأخرى</li>
+                        </ul>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">3. عدم مشاركة البيانات</h3>
+                        <p>
+                            نحن <strong>لا نشارك بيانات معاملاتك مع أي جهة ثالثة</strong> بما في ذلك:
+                        </p>
+                        <ul style="margin-top: 12px; margin-right: 20px;">
+                            <li>شركات الإعلان أو التسويق</li>
+                            <li>المؤسسات المالية</li>
+                            <li>الحكومات أو الجهات الرسمية</li>
+                            <li>أي متطفلين أو متسللين</li>
+                        </ul>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">4. الأمان</h3>
+                        <p>
+                            لأن بيانات معاملاتك محفوظة على جهازك بشكل محلي، فإن أمانها يعتمد على:
+                        </p>
+                        <ul style="margin-top: 12px; margin-right: 20px;">
+                            <li>أمان متصفحك وجهازك</li>
+                            <li>كلمة مرورك (استخدم كلمة مرور قوية)</li>
+                            <li>عدم كشف جهازك للآخرين</li>
+                        </ul>
+                        <p style="margin-top: 12px;">
+                            نوصي بحماية جهازك بكلمة مرور قوية وعدم مشاركة متصفحك مع الآخرين.
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">5. حذف البيانات</h3>
+                        <p>
+                            يمكنك حذف جميع بيانات معاملاتك في أي وقت من خلال قسم "الإعدادات". 
+                            بعد الحذف، لن يمكن استرجاع البيانات.
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">6. الكوكيز والتتبع</h3>
+                        <p>
+                            لا نستخدم أي كوكيز أو أدوات تتبع متقدمة. نستخدم فقط localStorage لحفظ بيانات جلستك.
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">7. مسؤولية المستخدم</h3>
+                        <p>
+                            أنت مسؤول عن:
+                        </p>
+                        <ul style="margin-top: 12px; margin-right: 20px;">
+                            <li>الحفاظ على سرية بيانات دخولك</li>
+                            <li>حماية جهازك من الوصول غير المصرح</li>
+                            <li>عمل نسخ احتياطية من بيانات معاملاتك</li>
+                        </ul>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">8. التحديثات على هذه السياسة</h3>
+                        <p>
+                            قد نحدث هذه السياسة من وقت لآخر. سيتم إخطارك بأي تغييرات جوهرية من خلال التطبيق.
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">9. التواصل معنا</h3>
+                        <p>
+                            إذا كان لديك أي أسئلة حول هذه السياسة، يرجى التواصل معنا على:
+                        </p>
+                        <p style="margin-top: 12px;">
+                            <strong>البريد الإلكتروني:</strong> <a href="mailto:azmyehab610@gmail.com" style="color: var(--primary); text-decoration: none;">azmyehab610@gmail.com</a>
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px; padding-top: 24px; border-top: 1px solid var(--border);">
+                        <p style="color: var(--text-secondary); font-size: 12px;">
+                            © AZMY EHAB 2026 — All Rights Reserved
+                        </p>
+                    </section>
+
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            UI.applyTheme();
+            UI.updateHeaderDate();
+            App.setupHamburgerMenu();
+        });
+    </script>
+</body>
+</html>

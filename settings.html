@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإعدادات - Expense Manager</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-info">
+                    <h1>الإعدادات</h1>
+                    <span class="header-date" id="header-date"></span>
+                </div>
+                <button id="hamburger-btn" class="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="mobile-menu">
+            <!-- User Section -->
+            <div class="mobile-menu-header">
+                <div class="user-avatar" id="mobile-user-avatar">
+                    <span>A</span>
+                </div>
+                <div class="user-info">
+                    <div class="user-name" id="mobile-user-name">المستخدم</div>
+                    <div class="user-email" id="mobile-user-email">test@example.com</div>
+                </div>
+            </div>
+
+            <!-- Main Menu Items -->
+            <div class="mobile-menu-section">
+                <a href="index.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon home-icon">🏠</span>
+                    <span class="menu-text">الرئيسية</span>
+                </a>
+                <a href="add-expense.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon add-icon">➕</span>
+                    <span class="menu-text">إضافة معاملة</span>
+                </a>
+                <a href="transactions.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon list-icon">📋</span>
+                    <span class="menu-text">المعاملات</span>
+                </a>
+                <a href="reports.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon chart-icon">📊</span>
+                    <span class="menu-text">التقارير</span>
+                </a>
+                <a href="settings.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon settings-icon">⚙️</span>
+                    <span class="menu-text">الإعدادات</span>
+                </a>
+            </div>
+
+            <!-- Secondary Menu Items -->
+            <div class="mobile-menu-section secondary">
+                <a href="about.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">ℹ️</span>
+                    <span class="menu-text">حول التطبيق</span>
+                </a>
+                <a href="privacy.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">🔒</span>
+                    <span class="menu-text">سياسة الخصوصية</span>
+                </a>
+                <a href="terms.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">📄</span>
+                    <span class="menu-text">الشروط والأحكام</span>
+                </a>
+            </div>
+
+            <!-- Logout Button -->
+            <div class="mobile-menu-footer">
+                <button id="mobile-logout-btn" class="btn btn-danger btn-full">
+                    <span>تسجيل الخروج</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="page-content">
+            <div class="page-container">
+                <!-- User Profile -->
+                <section class="section">
+                    <h3>معلومات المستخدم</h3>
+                    <div style="background: var(--surface); padding: 16px; border-radius: 8px; box-shadow: var(--shadow-sm);">
+                        <div style="margin-bottom: 12px;">
+                            <strong>الاسم:</strong>
+                            <p id="user-name" style="color: var(--text-secondary); margin-top: 4px;">-</p>
+                        </div>
+                        <div>
+                            <strong>البريد الإلكتروني:</strong>
+                            <p id="user-email" style="color: var(--text-secondary); margin-top: 4px;">-</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Custom Categories -->
+                <section class="section">
+                    <h3>الفئات المخصصة</h3>
+                    <div style="display: grid; gap: 16px;">
+                        <!-- Expense Categories -->
+                        <div style="background: var(--surface); padding: 16px; border-radius: 8px; box-shadow: var(--shadow-sm);">
+                            <h4 style="margin-bottom: 12px;">فئات النفقات</h4>
+                            <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+                                <input type="text" id="new-expense-category" placeholder="أضف فئة جديدة" style="flex: 1; padding: 10px; border: 1px solid var(--border); border-radius: 6px;">
+                                <button id="add-expense-category-btn" class="btn btn-primary" style="white-space: nowrap;">إضافة</button>
+                            </div>
+                            <div id="expense-categories-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px;"></div>
+                        </div>
+
+                        <!-- Income Categories -->
+                        <div style="background: var(--surface); padding: 16px; border-radius: 8px; box-shadow: var(--shadow-sm);">
+                            <h4 style="margin-bottom: 12px;">فئات الدخل</h4>
+                            <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+                                <input type="text" id="new-income-category" placeholder="أضف فئة جديدة" style="flex: 1; padding: 10px; border: 1px solid var(--border); border-radius: 6px;">
+                                <button id="add-income-category-btn" class="btn btn-primary" style="white-space: nowrap;">إضافة</button>
+                            </div>
+                            <div id="income-categories-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px;"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- App Settings -->
+                <section class="section">
+                    <h3>إعدادات التطبيق</h3>
+                    <div class="form-grid">
+                        <!-- Dark Mode Toggle -->
+                        <div class="form-group full" style="background: var(--surface); padding: 16px; border-radius: 8px; box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <strong>الوضع الليلي</strong>
+                                <p style="color: var(--text-secondary); font-size: 14px; margin-top: 4px;">تفعيل الوضع الليلي</p>
+                            </div>
+                            <div style="position: relative;">
+                                <input type="checkbox" id="dark-mode-toggle" style="width: 50px; height: 28px; cursor: pointer;">
+                            </div>
+                        </div>
+
+                        <!-- Export Data -->
+                        <div class="form-group full">
+                            <button id="export-data-btn" class="btn btn-primary btn-block">
+                                📥 تصدير البيانات
+                            </button>
+                            <p style="color: var(--text-secondary); font-size: 12px; margin-top: 8px;">تنزيل نسخة من جميع بيانات معاملاتك</p>
+                        </div>
+
+                        <!-- Import Data -->
+                        <div class="form-group full">
+                            <input type="file" id="import-file" accept=".json" style="display: none;">
+                            <button id="import-data-btn" class="btn btn-primary btn-block">
+                                📤 استيراد البيانات
+                            </button>
+                            <p style="color: var(--text-secondary); font-size: 12px; margin-top: 8px;">استيراد بيانات محفوظة سابقاً</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Danger Zone -->
+                <section class="section">
+                    <h3 style="color: #F44336;">منطقة الخطر</h3>
+                    <div style="background: rgba(244, 67, 54, 0.1); padding: 16px; border-radius: 8px; border: 1px solid #F44336;">
+                        <div style="margin-bottom: 16px;">
+                            <strong style="color: #F44336;">حذف جميع البيانات</strong>
+                            <p style="color: var(--text-secondary); margin-top: 8px;">هذا الإجراء لا يمكن التراجع عنه. سيتم حذف جميع معاملاتك نهائياً.</p>
+                        </div>
+                        <button id="reset-data-btn" class="btn btn-danger btn-block">
+                            🗑️ حذف جميع البيانات
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Logout -->
+                <section class="section">
+                    <button id="logout-btn" class="btn btn-secondary btn-block">
+                        🚪 تسجيل الخروج
+                    </button>
+                </section>
+
+                <!-- Legal Links -->
+                <section class="section">
+                    <h3>القانوني</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <a href="privacy.html" class="btn btn-primary" style="text-align: center;">سياسة الخصوصية</a>
+                        <a href="terms.html" class="btn btn-primary" style="text-align: center;">الشروط والأحكام</a>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer style="text-align: center; color: var(--text-secondary); font-size: 12px; padding: 16px 0; margin-top: 32px; border-top: 1px solid var(--border);">
+                    <p>© AZMY EHAB 2026 — All Rights Reserved</p>
+                    <p style="margin-top: 8px;">Expense Manager v1.0</p>
+                </footer>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">الرئيسية</span>
+            </a>
+            <a href="add-expense.html" class="nav-item">
+                <span class="nav-icon">➕</span>
+                <span class="nav-label">إضافة</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">التقارير</span>
+            </a>
+            <a href="settings.html" class="nav-item active">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-label">الإعدادات</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!Auth.isAuthenticated()) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            UI.applyTheme();
+            UI.updateActiveNav();
+            UI.updateHeaderDate();
+            App.setupHamburgerMenu();
+            UI.updateMobileMenuUserInfo();
+
+            const user = Auth.getCurrentUser();
+
+            // Display user info
+            document.getElementById('user-name').textContent = user.name;
+            document.getElementById('user-email').textContent = user.email;
+
+            // Render categories
+            UI.renderExpenseCategories();
+            UI.renderIncomeCategories();
+
+            // Add expense category
+            document.getElementById('add-expense-category-btn').addEventListener('click', () => {
+                const input = document.getElementById('new-expense-category');
+                const category = input.value.trim();
+                
+                try {
+                    Storage.addExpenseCategory(category);
+                    UI.showToast('تمت إضافة الفئة بنجاح', 'success');
+                    input.value = '';
+                    UI.renderExpenseCategories();
+                } catch (error) {
+                    UI.showToast(error.message, 'error');
+                }
+            });
+
+            // Add income category
+            document.getElementById('add-income-category-btn').addEventListener('click', () => {
+                const input = document.getElementById('new-income-category');
+                const category = input.value.trim();
+                
+                try {
+                    Storage.addIncomeCategory(category);
+                    UI.showToast('تمت إضافة الفئة بنجاح', 'success');
+                    input.value = '';
+                    UI.renderIncomeCategories();
+                } catch (error) {
+                    UI.showToast(error.message, 'error');
+                }
+            });
+
+            // Enter key support for category inputs
+            document.getElementById('new-expense-category').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    document.getElementById('add-expense-category-btn').click();
+                }
+            });
+
+            document.getElementById('new-income-category').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    document.getElementById('add-income-category-btn').click();
+                }
+            });
+
+            // Dark mode toggle
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const currentTheme = Storage.getTheme();
+            darkModeToggle.checked = currentTheme === 'dark';
+
+            darkModeToggle.addEventListener('change', () => {
+                const newTheme = UI.toggleDarkMode();
+                UI.showToast(newTheme === 'dark' ? 'تم تفعيل الوضع الليلي' : 'تم تعطيل الوضع الليلي', 'success');
+            });
+
+            // Export data
+            document.getElementById('export-data-btn').addEventListener('click', () => {
+                const data = {
+                    user: user,
+                    transactions: Storage.getUserTransactions(),
+                    exportDate: new Date().toISOString(),
+                };
+
+                const json = JSON.stringify(data, null, 2);
+                const blob = new Blob([json], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `expense-manager-backup-${new Date().toISOString().split('T')[0]}.json`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+
+                UI.showToast('تم تصدير البيانات بنجاح', 'success');
+            });
+
+            // Import data
+            document.getElementById('import-data-btn').addEventListener('click', () => {
+                document.getElementById('import-file').click();
+            });
+
+            document.getElementById('import-file').addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    try {
+                        const data = JSON.parse(event.target.result);
+                        
+                        if (!data.transactions || !Array.isArray(data.transactions)) {
+                            throw new Error('صيغة الملف غير صحيحة');
+                        }
+
+                        // Merge transactions (add new ones, skip duplicates)
+                        const existing = Storage.getUserTransactions();
+                        const existingIds = new Set(existing.map(t => t.id));
+                        const newTransactions = data.transactions.filter(t => !existingIds.has(t.id));
+
+                        if (newTransactions.length === 0) {
+                            UI.showToast('جميع المعاملات موجودة بالفعل', 'info');
+                            return;
+                        }
+
+                        const allTransactions = [...existing, ...newTransactions];
+                        Storage.setTransactions(allTransactions);
+
+                        UI.showToast(`تم استيراد ${newTransactions.length} معاملة بنجاح`, 'success');
+                    } catch (error) {
+                        UI.showToast('حدث خطأ في استيراد الملف: ' + error.message, 'error');
+                    }
+                };
+                reader.readAsText(file);
+            });
+
+            // Reset data
+            document.getElementById('reset-data-btn').addEventListener('click', () => {
+                if (confirm('هل أنت متأكد من حذف جميع البيانات؟\nلا يمكن التراجع عن هذا الإجراء!')) {
+                    if (confirm('هذا هو التأكيد الأخير. سيتم حذف جميع بيانات معاملاتك نهائياً!')) {
+                        Storage.setTransactions([]);
+                        UI.showToast('تم حذف جميع البيانات', 'success');
+                        setTimeout(() => {
+                            window.location.href = 'index.html';
+                        }, 1000);
+                    }
+                }
+            });
+
+            // Logout
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                if (confirm('هل تريد تسجيل الخروج؟')) {
+                    Auth.logout();
+                    UI.showToast('تم تسجيل خروجك', 'info');
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المعاملات - Expense Manager</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-info">
+                    <h1>المعاملات</h1>
+                    <span class="header-date" id="header-date"></span>
+                </div>
+                <button id="hamburger-btn" class="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="mobile-menu">
+            <!-- User Section -->
+            <div class="mobile-menu-header">
+                <div class="user-avatar" id="mobile-user-avatar">
+                    <span>A</span>
+                </div>
+                <div class="user-info">
+                    <div class="user-name" id="mobile-user-name">المستخدم</div>
+                    <div class="user-email" id="mobile-user-email">test@example.com</div>
+                </div>
+            </div>
+
+            <!-- Main Menu Items -->
+            <div class="mobile-menu-section">
+                <a href="index.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon home-icon">🏠</span>
+                    <span class="menu-text">الرئيسية</span>
+                </a>
+                <a href="add-expense.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon add-icon">➕</span>
+                    <span class="menu-text">إضافة معاملة</span>
+                </a>
+                <a href="transactions.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon list-icon">📋</span>
+                    <span class="menu-text">المعاملات</span>
+                </a>
+                <a href="reports.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon chart-icon">📊</span>
+                    <span class="menu-text">التقارير</span>
+                </a>
+                <a href="settings.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon settings-icon">⚙️</span>
+                    <span class="menu-text">الإعدادات</span>
+                </a>
+            </div>
+
+            <!-- Secondary Menu Items -->
+            <div class="mobile-menu-section secondary">
+                <a href="about.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">ℹ️</span>
+                    <span class="menu-text">حول التطبيق</span>
+                </a>
+                <a href="privacy.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">🔒</span>
+                    <span class="menu-text">سياسة الخصوصية</span>
+                </a>
+                <a href="terms.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">📄</span>
+                    <span class="menu-text">الشروط والأحكام</span>
+                </a>
+            </div>
+
+            <!-- Logout Button -->
+            <div class="mobile-menu-footer">
+                <button id="mobile-logout-btn" class="btn btn-danger btn-full">
+                    <span>تسجيل الخروج</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="page-content">
+            <div class="page-container">
+                <!-- Filters -->
+                <section class="section">
+                    <h3>المرشحات</h3>
+                    <div class="form-grid">
+                        <!-- Search -->
+                        <div class="form-group full">
+                            <input type="text" id="search-input" placeholder="ابحث عن معاملة...">
+                        </div>
+
+                        <!-- Type Filter -->
+                        <div class="form-group">
+                            <select id="type-filter">
+                                <option value="">جميع الأنواع</option>
+                                <option value="expense">نفقات</option>
+                                <option value="income">دخل</option>
+                            </select>
+                        </div>
+
+                        <!-- Category Filter -->
+                        <div class="form-group">
+                            <select id="category-filter">
+                                <option value="">جميع الفئات</option>
+                            </select>
+                        </div>
+
+                        <!-- Date From -->
+                        <div class="form-group">
+                            <input type="date" id="date-from" placeholder="من التاريخ">
+                        </div>
+
+                        <!-- Date To -->
+                        <div class="form-group">
+                            <input type="date" id="date-to" placeholder="إلى التاريخ">
+                        </div>
+
+                        <!-- Clear Filters -->
+                        <div class="form-group">
+                            <button id="clear-filters" class="btn btn-secondary btn-block">
+                                🔄 مسح المرشحات
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Transactions List -->
+                <section class="section">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <h3>قائمة المعاملات</h3>
+                        <span id="transaction-count" style="color: var(--text-secondary); font-size: 14px;">
+                            0 معاملة
+                        </span>
+                    </div>
+                    <div id="transactions-list" class="transactions-list">
+                        <!-- Dynamic content -->
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">الرئيسية</span>
+            </a>
+            <a href="add-expense.html" class="nav-item">
+                <span class="nav-icon">➕</span>
+                <span class="nav-label">إضافة</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">التقارير</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-label">الإعدادات</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!Auth.isAuthenticated()) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            UI.applyTheme();
+            UI.updateActiveNav();
+            UI.updateHeaderDate();
+            App.setupHamburgerMenu();
+
+            let currentFilters = {
+                type: '',
+                category: '',
+                search: '',
+                startDate: '',
+                endDate: '',
+            };
+
+            // Populate category filter
+            function populateCategoryFilter() {
+                const allTransactions = Storage.getUserTransactions();
+                const categories = [...new Set(allTransactions.map(t => t.category))];
+                
+                const categoryFilter = document.getElementById('category-filter');
+                categoryFilter.innerHTML = '<option value="">جميع الفئات</option>' +
+                    categories.map(cat => `<option value="${cat}">${cat}</option>`).join('');
+            }
+
+            // Render transactions based on current filters
+            function renderTransactions() {
+                const filtered = Storage.getFilteredTransactions(currentFilters);
+                const sorted = filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                UI.renderTransactionsList(sorted, handleDelete, handleEdit);
+
+                // Update count
+                document.getElementById('transaction-count').textContent = `${sorted.length} معاملة`;
+            }
+
+            // Handle delete
+            function handleDelete(id) {
+                Storage.deleteTransaction(id);
+                UI.showToast('تم حذف المعاملة', 'success');
+                renderTransactions();
+            }
+
+            // Handle edit
+            function handleEdit(id) {
+                const transaction = Storage.getUserTransactions().find(t => t.id === id);
+                if (!transaction) return;
+
+                // In a real app, this would open an edit modal
+                // For now, just show a simple approach
+                const newAmount = prompt('أدخل المبلغ الجديد:', transaction.amount);
+                if (newAmount !== null && newAmount !== '') {
+                    Storage.updateTransaction(id, { amount: parseFloat(newAmount) });
+                    UI.showToast('تم تحديث المعاملة', 'success');
+                    renderTransactions();
+                }
+            }
+
+            // Setup event listeners
+            document.getElementById('search-input').addEventListener('input', (e) => {
+                currentFilters.search = e.target.value;
+                renderTransactions();
+            });
+
+            document.getElementById('type-filter').addEventListener('change', (e) => {
+                currentFilters.type = e.target.value;
+                renderTransactions();
+            });
+
+            document.getElementById('category-filter').addEventListener('change', (e) => {
+                currentFilters.category = e.target.value;
+                renderTransactions();
+            });
+
+            document.getElementById('date-from').addEventListener('change', (e) => {
+                currentFilters.startDate = e.target.value;
+                renderTransactions();
+            });
+
+            document.getElementById('date-to').addEventListener('change', (e) => {
+                currentFilters.endDate = e.target.value;
+                renderTransactions();
+            });
+
+            document.getElementById('clear-filters').addEventListener('click', () => {
+                currentFilters = {
+                    type: '',
+                    category: '',
+                    search: '',
+                    startDate: '',
+                    endDate: '',
+                };
+
+                document.getElementById('search-input').value = '';
+                document.getElementById('type-filter').value = '';
+                document.getElementById('category-filter').value = '';
+                document.getElementById('date-from').value = '';
+                document.getElementById('date-to').value = '';
+
+                renderTransactions();
+                UI.showToast('تم مسح المرشحات', 'info');
+            });
+
+            // Initial render
+            populateCategoryFilter();
+            renderTransactions();
+        });
+    </script>
+</body>
+</html>

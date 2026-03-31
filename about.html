@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حول التطبيق - Expense Manager</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-info">
+                    <h1>حول التطبيق</h1>
+                    <span class="header-date" id="header-date"></span>
+                </div>
+                <button id="hamburger-btn" class="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="mobile-menu">
+            <!-- User Section -->
+            <div class="mobile-menu-header">
+                <div class="user-avatar" id="mobile-user-avatar">
+                    <span>A</span>
+                </div>
+                <div class="user-info">
+                    <div class="user-name" id="mobile-user-name">المستخدم</div>
+                    <div class="user-email" id="mobile-user-email">test@example.com</div>
+                </div>
+            </div>
+
+            <!-- Main Menu Items -->
+            <div class="mobile-menu-section">
+                <a href="index.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon home-icon">🏠</span>
+                    <span class="menu-text">الرئيسية</span>
+                </a>
+                <a href="add-expense.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon add-icon">➕</span>
+                    <span class="menu-text">إضافة معاملة</span>
+                </a>
+                <a href="transactions.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon list-icon">📋</span>
+                    <span class="menu-text">المعاملات</span>
+                </a>
+                <a href="reports.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon chart-icon">📊</span>
+                    <span class="menu-text">التقارير</span>
+                </a>
+                <a href="settings.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon settings-icon">⚙️</span>
+                    <span class="menu-text">الإعدادات</span>
+                </a>
+            </div>
+
+            <!-- Secondary Menu Items -->
+            <div class="mobile-menu-section secondary">
+                <a href="about.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">ℹ️</span>
+                    <span class="menu-text">حول التطبيق</span>
+                </a>
+                <a href="privacy.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">🔒</span>
+                    <span class="menu-text">سياسة الخصوصية</span>
+                </a>
+                <a href="terms.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">📄</span>
+                    <span class="menu-text">الشروط والأحكام</span>
+                </a>
+            </div>
+
+            <!-- Logout Button -->
+            <div class="mobile-menu-footer">
+                <button id="mobile-logout-btn" class="btn btn-danger btn-full">
+                    <span>تسجيل الخروج</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="page-content">
+            <div class="page-container">
+                <!-- Hero Section -->
+                <section style="text-align: center; margin-bottom: 48px; padding: 32px 0;">
+                    <div style="font-size: 64px; margin-bottom: 16px;">💰</div>
+                    <h2 style="color: var(--primary); font-size: 32px; margin-bottom: 16px;">Expense Manager</h2>
+                    <p style="color: var(--text-secondary); font-size: 18px;">
+                        تطبيق إدارة النفقات الذكي والآمن
+                    </p>
+                </section>
+
+                <!-- Description -->
+                <article style="background: var(--surface); padding: 24px; border-radius: 12px; box-shadow: var(--shadow-md); margin-bottom: 32px; line-height: 1.8;">
+                    
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 20px;">ما هو Expense Manager؟</h3>
+                        <p>
+                            Expense Manager هو تطبيق ويب حديث لإدارة نفقاتك ودخلك بسهولة وأمان. 
+                            مع واجهة مستخدم بديهية وميزات قوية، يمكنك تتبع جميع معاملاتك المالية محلياً على جهازك.
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 20px;">المميزات الرئيسية</h3>
+                        <ul style="margin-right: 20px; display: grid; gap: 12px;">
+                            <li>✅ <strong>تتبع النفقات والدخل:</strong> سجل جميع معاملاتك المالية بسهولة</li>
+                            <li>✅ <strong>تنظيم بالفئات:</strong> صنف معاملاتك حسب الفئة المناسبة</li>
+                            <li>✅ <strong>تقارير مفصلة:</strong> احصل على تحليل شامل لنفقاتك</li>
+                            <li>✅ <strong>بيانات آمنة محلياً:</strong> جميع البيانات تُحفظ على جهازك فقط</li>
+                            <li>✅ <strong>واجهة سهلة الاستخدام:</strong> تصميم حديث متوافق مع جميع الأجهزة</li>
+                            <li>✅ <strong>وضع ليلي:</strong> حماية عينيك في ساعات الليل</li>
+                            <li>✅ <strong>تصدير واستيراد البيانات:</strong> احفظ نسخة احتياطية من بيانات معاملاتك</li>
+                        </ul>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 20px;">لماذا تختار Expense Manager؟</h3>
+                        <ul style="margin-right: 20px; display: grid; gap: 12px;">
+                            <li>🔒 <strong>الأمان أولاً:</strong> بيانات محفوظة محلياً بدون أي خوادم</li>
+                            <li>⚡ <strong>سريع جداً:</strong> أداء فوري بدون تأخير</li>
+                            <li>📱 <strong>يعمل في الوضع العميق:</strong> يعمل بدون الاتصال بالإنترنت</li>
+                            <li>💯 <strong>مجاني تماماً:</strong> بدون رسوم أو اشتراكات</li>
+                            <li>🎨 <strong>تصميم احترافي:</strong> واجهة حديثة وسهلة الاستخدام</li>
+                            <li>🌙 <strong>دعم الوضع الليلي:</strong> راحة العين والبطارية</li>
+                        </ul>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 20px;">كيفية البدء</h3>
+                        <ol style="margin-right: 20px; display: grid; gap: 12px;">
+                            <li><strong>إنشاء حساب:</strong> أدخل اسمك وبريدك الإلكتروني وكلمة مرورك</li>
+                            <li><strong>إضافة معاملات:</strong> ابدأ بتسجيل نفقاتك ودخلك</li>
+                            <li><strong>مراقبة التقارير:</strong> شاهد تحليلات مفصلة لمعاملاتك</li>
+                            <li><strong>إدارة البيانات:</strong> احفظ نسخ احتياطية أو حذف البيانات حسب الحاجة</li>
+                        </ol>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 20px;">الخصوصية والأمان</h3>
+                        <p>
+                            نأخذ خصوصيتك على محمل الجد. جميع معاملاتك المالية تُحفظ <strong>محلياً على جهازك فقط</strong> 
+                            ولا نرسل أي بيانات إلى خوادم خارجية. اقرأ 
+                            <a href="privacy.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">سياسة الخصوصية الكاملة</a>.
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px; padding-top: 24px; border-top: 1px solid var(--border);">
+                        <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 20px;">معلومات التطبيق</h3>
+                        <div style="background: var(--background); padding: 16px; border-radius: 8px;">
+                            <p><strong>الإصدار:</strong> 1.0.0</p>
+                            <p><strong>اللغة:</strong> العربية</p>
+                            <p><strong>التقنيات المستخدمة:</strong> HTML5, CSS3, Vanilla JavaScript</p>
+                            <p><strong>المتطلبات:</strong> متصفح حديث (Chrome, Firefox, Safari, Edge)</p>
+                            <p><strong>تاريخ الإطلاق:</strong> 2026-04-01</p>
+                        </div>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 20px;">التواصل والدعم</h3>
+                        <p>
+                            هل لديك أسئلة أو اقتراحات؟ نود أن نسمع منك!
+                        </p>
+                        <p style="margin-top: 12px;">
+                            <strong>البريد الإلكتروني:</strong> <a href="mailto:azmyehab610@gmail.com" style="color: var(--primary); text-decoration: none;">azmyehab610@gmail.com</a>
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 20px;">الشروط والأحكام</h3>
+                        <p>
+                            باستخدامك للتطبيق، فإنك توافق على جميع 
+                            <a href="terms.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">الشروط والأحكام</a>.
+                        </p>
+                    </section>
+
+                    <section style="padding-top: 24px; border-top: 1px solid var(--border);">
+                        <p style="color: var(--text-secondary); font-size: 12px; text-align: center;">
+                            © AZMY EHAB 2026 — All Rights Reserved
+                        </p>
+                        <p style="color: var(--text-secondary); font-size: 12px; text-align: center; margin-top: 8px;">
+                            Expense Manager is a free, open-source project
+                        </p>
+                    </section>
+
+                </article>
+
+                <!-- Quick Links -->
+                <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px;">
+                    <a href="privacy.html" class="btn btn-primary" style="text-align: center;">سياسة الخصوصية</a>
+                    <a href="terms.html" class="btn btn-primary" style="text-align: center;">الشروط والأحكام</a>
+                    <a href="index.html" class="btn btn-secondary btn-block" style="grid-column: 1/-1; text-align: center;">رجوع للرئيسية</a>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            UI.applyTheme();
+            UI.updateHeaderDate();
+            App.setupHamburgerMenu();
+        });
+    </script>
+</body>
+</html>

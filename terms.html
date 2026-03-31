@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشروط والأحكام - Expense Manager</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-info">
+                    <h1>الشروط والأحكام</h1>
+                    <span class="header-date" id="header-date"></span>
+                </div>
+                <button id="hamburger-btn" class="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="mobile-menu">
+            <!-- User Section -->
+            <div class="mobile-menu-header">
+                <div class="user-avatar" id="mobile-user-avatar">
+                    <span>A</span>
+                </div>
+                <div class="user-info">
+                    <div class="user-name" id="mobile-user-name">المستخدم</div>
+                    <div class="user-email" id="mobile-user-email">test@example.com</div>
+                </div>
+            </div>
+
+            <!-- Main Menu Items -->
+            <div class="mobile-menu-section">
+                <a href="index.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon home-icon">🏠</span>
+                    <span class="menu-text">الرئيسية</span>
+                </a>
+                <a href="add-expense.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon add-icon">➕</span>
+                    <span class="menu-text">إضافة معاملة</span>
+                </a>
+                <a href="transactions.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon list-icon">📋</span>
+                    <span class="menu-text">المعاملات</span>
+                </a>
+                <a href="reports.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon chart-icon">📊</span>
+                    <span class="menu-text">التقارير</span>
+                </a>
+                <a href="settings.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon settings-icon">⚙️</span>
+                    <span class="menu-text">الإعدادات</span>
+                </a>
+            </div>
+
+            <!-- Secondary Menu Items -->
+            <div class="mobile-menu-section secondary">
+                <a href="about.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">ℹ️</span>
+                    <span class="menu-text">حول التطبيق</span>
+                </a>
+                <a href="privacy.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">🔒</span>
+                    <span class="menu-text">سياسة الخصوصية</span>
+                </a>
+                <a href="terms.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">📄</span>
+                    <span class="menu-text">الشروط والأحكام</span>
+                </a>
+            </div>
+
+            <!-- Logout Button -->
+            <div class="mobile-menu-footer">
+                <button id="mobile-logout-btn" class="btn btn-danger btn-full">
+                    <span>تسجيل الخروج</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="page-content">
+            <div class="page-container">
+                <article style="background: var(--surface); padding: 24px; border-radius: 12px; box-shadow: var(--shadow-md); line-height: 1.8;">
+                    
+                    <section style="margin-bottom: 32px;">
+                        <h2 style="color: var(--primary); margin-bottom: 16px; font-size: 24px;">الشروط والأحكام</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 12px;">
+                            تاريخ التحديث: <strong>2026-04-01</strong>
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">1. الموافقة على الشروط</h3>
+                        <p>
+                            باستخدام تطبيق Expense Manager، فإنك توافق على جميع الشروط والأحكام الواردة في هذا المستند. 
+                            إذا لم توافق على أي من هذه الشروط، يرجى عدم استخدام التطبيق.
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">2. الاستخدام المسموح به</h3>
+                        <p>
+                            يسمح لك باستخدام هذا التطبيق لأغراض شخصية وقانونية فقط. يحظر عليك:
+                        </p>
+                        <ul style="margin-top: 12px; margin-right: 20px;">
+                            <li>استخدام التطبيق لأغراض غير قانونية</li>
+                            <li>محاولة اختراق أو تعطيل التطبيق</li>
+                            <li>نسخ أو توزيع أكواد التطبيق</li>
+                            <li>استخدام التطبيق بطريقة تضر بالآخرين</li>
+                        </ul>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">3. حقوق الملكية الفكرية</h3>
+                        <p>
+                            جميع محتوى التطبيق، بما فيه الكود والتصميم والشعار، محمية بحقوق الملكية الفكرية. 
+                            لا يُسمح بنسخ أو تعديل أي جزء من التطبيق بدون إذن صريح.
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">4. إخلاء المسؤولية</h3>
+                        <p>
+                            يتم توفير هذا التطبيق "كما هو" بدون أي ضمانات من أي نوع. نحن لا نضمن:
+                        </p>
+                        <ul style="margin-top: 12px; margin-right: 20px;">
+                            <li>أن التطبيق خالٍ من الأخطاء</li>
+                            <li>أن التطبيق سيعمل بدون انقطاع</li>
+                            <li>دقة البيانات المحفوظة</li>
+                            <li>استعادة البيانات المحذوفة</li>
+                        </ul>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">5. تحديد المسؤولية</h3>
+                        <p>
+                            <strong>لن نكون مسؤولين</strong> عن أي:
+                        </p>
+                        <ul style="margin-top: 12px; margin-right: 20px;">
+                            <li>خسائر مالية أو مباشرة</li>
+                            <li>فقدان البيانات أو معاملاتك</li>
+                            <li>أضرار غير مباشرة أو عرضية</li>
+                            <li>توقف الخدمة أو الأخطاء التقنية</li>
+                        </ul>
+                        <p style="margin-top: 12px;">
+                            في جميع الحالات، <strong>المسؤولية الكاملة على المستخدم</strong>. 
+                            أنت مسؤول عن عمل نسخ احتياطية من بيانات معاملاتك بانتظام.
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">6. البيانات المحلية</h3>
+                        <p>
+                            بما أن جميع البي��نات تُحفظ محلياً على جهازك، فإن:
+                        </p>
+                        <ul style="margin-top: 12px; margin-right: 20px;">
+                            <li>حذف بيانات متصفحك قد يؤدي إلى فقدان جميع البيانات</li>
+                            <li>تغيير المتصفح قد يعني فقدان الوصول إلى البيانات</li>
+                            <li>مشاركة جهازك قد تعرض بيانات معاملاتك للخطر</li>
+                        </ul>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">7. كلمات المرور والأمان</h3>
+                        <p>
+                            أنت مسؤول عن الحفاظ على سرية كلمة المرور الخاصة بك. لا نخزن كلمات المرور بشكل مشفر، 
+                            وبالتالي <strong>استخدم كلمة مرور قوية وفريدة</strong>.
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">8. التعديلات على الخدمة</h3>
+                        <p>
+                            نحتفظ بالحق في تعديل أو إيقاف التطبيق في أي وقت بدون إشعار مسبق.
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">9. الامتثال للقوانين</h3>
+                        <p>
+                            أنت توافق على استخدام التط��يق بما يتوافق مع جميع القوانين والأنظمة المحلية والدولية.
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">10. التحديثات على الشروط</h3>
+                        <p>
+                            قد نحدث هذه الشروط من وقت لآخر. سيتم إخطارك بأي تغييرات جوهرية.
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px;">
+                        <h3 style="color: var(--primary); margin-bottom: 12px;">11. التواصل والدعم</h3>
+                        <p>
+                            لأي استفسارات أو شكاوى، يرجى التواصل معنا على:
+                        </p>
+                        <p style="margin-top: 12px;">
+                            <strong>البريد الإلكتروني:</strong> <a href="mailto:azmyehab610@gmail.com" style="color: var(--primary); text-decoration: none;">azmyehab610@gmail.com</a>
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 24px; padding-top: 24px; border-top: 1px solid var(--border);">
+                        <p style="color: var(--text-secondary); font-size: 12px;">
+                            © AZMY EHAB 2026 — All Rights Reserved
+                        </p>
+                    </section>
+
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            UI.applyTheme();
+            UI.updateHeaderDate();
+            App.setupHamburgerMenu();
+        });
+    </script>
+</body>
+</html>

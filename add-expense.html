@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة معاملة - Expense Manager</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-info">
+                    <h1>إضافة معاملة</h1>
+                    <span class="header-date" id="header-date"></span>
+                </div>
+                <button id="hamburger-btn" class="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="mobile-menu">
+            <!-- User Section -->
+            <div class="mobile-menu-header">
+                <div class="user-avatar" id="mobile-user-avatar">
+                    <span>A</span>
+                </div>
+                <div class="user-info">
+                    <div class="user-name" id="mobile-user-name">المستخدم</div>
+                    <div class="user-email" id="mobile-user-email">test@example.com</div>
+                </div>
+            </div>
+
+            <!-- Main Menu Items -->
+            <div class="mobile-menu-section">
+                <a href="index.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon home-icon">🏠</span>
+                    <span class="menu-text">الرئيسية</span>
+                </a>
+                <a href="add-expense.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon add-icon">➕</span>
+                    <span class="menu-text">إضافة معاملة</span>
+                </a>
+                <a href="transactions.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon list-icon">📋</span>
+                    <span class="menu-text">المعاملات</span>
+                </a>
+                <a href="reports.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon chart-icon">📊</span>
+                    <span class="menu-text">التقارير</span>
+                </a>
+                <a href="settings.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon settings-icon">⚙️</span>
+                    <span class="menu-text">الإعدادات</span>
+                </a>
+            </div>
+
+            <!-- Secondary Menu Items -->
+            <div class="mobile-menu-section secondary">
+                <a href="about.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">ℹ️</span>
+                    <span class="menu-text">حول التطبيق</span>
+                </a>
+                <a href="privacy.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">🔒</span>
+                    <span class="menu-text">سياسة الخصوصية</span>
+                </a>
+                <a href="terms.html" class="mobile-menu-item">
+                    <span class="mobile-menu-icon">📄</span>
+                    <span class="menu-text">الشروط والأحكام</span>
+                </a>
+            </div>
+
+            <!-- Logout Button -->
+            <div class="mobile-menu-footer">
+                <button id="mobile-logout-btn" class="btn btn-danger btn-full">
+                    <span>تسجيل الخروج</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="page-content">
+            <div class="page-container">
+                <form id="transaction-form" class="form-grid">
+                    <!-- Type Selection -->
+                    <div class="form-group full">
+                        <label>نوع المعاملة</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="type-expense" name="type" value="expense" checked>
+                                <label for="type-expense">نفقة</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="type-income" name="type" value="income">
+                                <label for="type-income">دخل</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="form-group full">
+                        <label for="title">الوصف</label>
+                        <input type="text" id="title" name="title" placeholder="مثال: وجبة غداء" required>
+                    </div>
+
+                    <!-- Amount -->
+                    <div class="form-group">
+                        <label for="amount">المبلغ</label>
+                        <input type="number" id="amount" name="amount" placeholder="0.00" min="0" step="0.01" required>
+                    </div>
+
+                    <!-- Category -->
+                    <div class="form-group">
+                        <label for="category">الفئة</label>
+                        <select id="category" name="category" required>
+                            <option value="">اختر فئة</option>
+                        </select>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="form-group">
+                        <label for="date">التاريخ</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="form-group full">
+                        <label for="description">ملاحظات (اختياري)</label>
+                        <textarea id="description" name="description" placeholder="أضف ملاحظات إضافية..." rows="3"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-group full">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            ✅ حفظ المعاملة
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">الرئيسية</span>
+            </a>
+            <a href="add-expense.html" class="nav-item active">
+                <span class="nav-icon">➕</span>
+                <span class="nav-label">إضافة</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">التقارير</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-label">الإعدادات</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Check authentication
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!Auth.isAuthenticated()) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            UI.applyTheme();
+            UI.updateActiveNav();
+            UI.updateHeaderDate();
+            App.setupHamburgerMenu();
+
+            // Set today's date as default
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('date').value = today;
+
+            // Handle type change to update categories
+            const typeRadios = document.querySelectorAll('input[name="type"]');
+            typeRadios.forEach(radio => {
+                radio.addEventListener('change', updateCategories);
+            });
+
+            // Initial category load
+            updateCategories();
+
+            // Form submission
+            document.getElementById('transaction-form').addEventListener('submit', handleSubmit);
+
+            function updateCategories() {
+                const type = document.querySelector('input[name="type"]:checked').value;
+                const categorySelect = document.getElementById('category');
+                const categories = type === 'income' ? UI.getIncomeCategories() : UI.getCategoryOptions();
+
+                categorySelect.innerHTML = '<option value="">اختر فئة</option>' +
+                    categories.map(cat => `<option value="${cat}">${cat}</option>`).join('');
+            }
+
+            function handleSubmit(e) {
+                e.preventDefault();
+
+                try {
+                    const type = document.querySelector('input[name="type"]:checked').value;
+                    const title = document.getElementById('title').value.trim();
+                    const amount = parseFloat(document.getElementById('amount').value);
+                    const category = document.getElementById('category').value;
+                    const date = document.getElementById('date').value;
+                    const description = document.getElementById('description').value.trim();
+
+                    // Validation
+                    if (!title || !amount || !category || !date) {
+                        UI.showToast('جميع الحقول المطلوبة يجب أن تكون معبأة', 'error');
+                        return;
+                    }
+
+                    if (amount <= 0) {
+                        UI.showToast('المبلغ يجب أن يكون أكبر من صفر', 'error');
+                        return;
+                    }
+
+                    // Add transaction
+                    Storage.addTransaction({
+                        title,
+                        amount,
+                        category,
+                        type,
+                        date,
+                        description,
+                    });
+
+                    UI.showToast('تم حفظ ا��معاملة بنجاح', 'success');
+
+                    // Reset form
+                    document.getElementById('transaction-form').reset();
+                    document.getElementById('date').value = today;
+                    updateCategories();
+
+                    // Redirect to dashboard after 1 second
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1000);
+
+                } catch (error) {
+                    UI.showToast(error.message, 'error');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

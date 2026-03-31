@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Manager - إدارة النفقات</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Auth Container (Login/Register) -->
+        <div id="auth-container" class="auth-container hidden">
+            <div class="auth-box">
+                <h1 class="auth-title">Expense Manager</h1>
+                <p class="auth-subtitle">إدارة نفقاتك بذكاء</p>
+
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <input type="email" id="login-email" placeholder="البريد الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="login-password" placeholder="كلمة المرور" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">دخول</button>
+                </form>
+
+                <div class="auth-divider">أو</div>
+
+                <!-- Register Form -->
+                <form id="register-form" class="auth-form hidden">
+                    <div class="form-group">
+                        <input type="text" id="register-name" placeholder="الاسم الكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="register-email" placeholder="البريد الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="register-password" placeholder="كلمة المرور" required>
+                        <div id="password-strength"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">إنشاء حساب</button>
+                </form>
+
+                <p class="auth-toggle">
+                    <span id="toggle-auth">ليس لديك حساب؟ <strong>سجل الآن</strong></span>
+                </p>
+
+                <div class="auth-footer">
+                    <p>هذا التطبيق يحفظ البيانات محلياً فقط</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main App Container -->
+        <div id="main-container" class="main-container hidden">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-content">
+                    <div class="header-info">
+                        <h1>Expense Manager</h1>
+                        <span class="header-date" id="header-date"></span>
+                    </div>
+                    <button id="hamburger-btn" class="hamburger-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button id="logout-btn" class="btn btn-secondary btn-small">خروج</button>
+                </div>
+            </header>
+
+            <!-- Mobile Menu Overlay -->
+            <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+
+            <!-- Mobile Menu -->
+            <nav id="mobile-menu" class="mobile-menu">
+                <!-- User Section -->
+                <div class="mobile-menu-header">
+                    <div class="user-avatar" id="mobile-user-avatar">
+                        <span>A</span>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name" id="mobile-user-name">المستخدم</div>
+                        <div class="user-email" id="mobile-user-email">test@example.com</div>
+                    </div>
+                </div>
+
+                <!-- Main Menu Items -->
+                <div class="mobile-menu-section">
+                    <a href="index.html" class="mobile-menu-item">
+                        <span class="mobile-menu-icon home-icon">🏠</span>
+                        <span class="menu-text">الرئيسية</span>
+                    </a>
+                    <a href="add-expense.html" class="mobile-menu-item">
+                        <span class="mobile-menu-icon add-icon">➕</span>
+                        <span class="menu-text">إضافة معاملة</span>
+                    </a>
+                    <a href="transactions.html" class="mobile-menu-item">
+                        <span class="mobile-menu-icon list-icon">📋</span>
+                        <span class="menu-text">المعاملات</span>
+                    </a>
+                    <a href="reports.html" class="mobile-menu-item">
+                        <span class="mobile-menu-icon chart-icon">📊</span>
+                        <span class="menu-text">التقارير</span>
+                    </a>
+                    <a href="settings.html" class="mobile-menu-item">
+                        <span class="mobile-menu-icon settings-icon">⚙️</span>
+                        <span class="menu-text">الإعدادات</span>
+                    </a>
+                </div>
+
+                <!-- Secondary Menu Items -->
+                <div class="mobile-menu-section secondary">
+                    <a href="about.html" class="mobile-menu-item">
+                        <span class="mobile-menu-icon">ℹ️</span>
+                        <span class="menu-text">حول التطبيق</span>
+                    </a>
+                    <a href="privacy.html" class="mobile-menu-item">
+                        <span class="mobile-menu-icon">🔒</span>
+                        <span class="menu-text">سياسة الخصوصية</span>
+                    </a>
+                    <a href="terms.html" class="mobile-menu-item">
+                        <span class="mobile-menu-icon">📄</span>
+                        <span class="menu-text">الشروط والأحكام</span>
+                    </a>
+                </div>
+
+                <!-- Logout Button -->
+                <div class="mobile-menu-footer">
+                    <button id="mobile-logout-btn" class="btn btn-danger btn-full">
+                        <span>تسجيل الخروج</span>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Dashboard Content -->
+            <main id="dashboard-page" class="page-content">
+                <div class="dashboard-container">
+                    <!-- User Welcome -->
+                    <div class="user-welcome">
+                        <h2 id="user-greeting">مرحباً!</h2>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card balance">
+                            <span class="stat-label">الرصيد الكلي</span>
+                            <span class="stat-value" id="total-balance">0</span>
+                        </div>
+                        <div class="stat-card income">
+                            <span class="stat-label">إجمالي الدخل</span>
+                            <span class="stat-value" id="total-income">0</span>
+                        </div>
+                        <div class="stat-card expense">
+                            <span class="stat-label">إجمالي النفقات</span>
+                            <span class="stat-value" id="total-expenses">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <a href="add-expense.html" class="btn btn-primary btn-block">
+                            <span class="icon">➕</span> إضافة معاملة
+                        </a>
+                        <a href="transactions.html" class="btn btn-secondary btn-block">
+                            <span class="icon">📋</span> عرض المعاملات
+                        </a>
+                    </div>
+
+                    <!-- Recent Transactions -->
+                    <section class="recent-section">
+                        <h3>آخر المعاملات</h3>
+                        <div id="recent-transactions" class="transactions-list">
+                            <!-- Dynamic content -->
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="index.html" class="nav-item active">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-label">الرئيسية</span>
+                </a>
+                <a href="add-expense.html" class="nav-item">
+                    <span class="nav-icon">➕</span>
+                    <span class="nav-label">إضافة</span>
+                </a>
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-label">التقارير</span>
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-label">الإعدادات</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Password strength indicator
+        document.getElementById('register-password').addEventListener('input', (e) => {
+            UI.renderPasswordStrength(e.target.value, 'password-strength');
+        });
+    </script>
+</body>
+</html>
